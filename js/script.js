@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Menú móvil
-    const mobileMenuBtn = document.querySelector('.mobile-menu');
-    const navigation = document.querySelector('.navigation ul');
+    document.querySelector('.mobile-menu').addEventListener('click', function() {
+    document.querySelector('.navigation ul').classList.toggle('show');
+});
     
     mobileMenuBtn.addEventListener('click', function() {
         navigation.style.display = navigation.style.display === 'block' ? 'none' : 'block';
