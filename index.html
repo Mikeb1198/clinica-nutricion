@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clínica de Nutrición especializada en planes personalizados por Patricia Barajas">
+    <title>Clínica de Nutrición by Patricia Barajas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Estilos adicionales para el formulario WhatsApp */
+        .whatsapp-form-notice {
+            background-color: #25D36620;
+            border-left: 4px solid #25D366;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .whatsapp-form-notice i {
+            color: #25D366;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navegación -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Clínica de Nutrición <span>by Patricia Barajas</span></h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Transforma tu salud con nutrición personalizada</h2>
+                <p>Programas de alimentación diseñados específicamente para tus necesidades</p>
+                <a href="#contacto" class="btn">Agendar Consulta</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Plan Nutricional Personalizado</h3>
+                    <p>Diseñado según tus objetivos, gustos y necesidades específicas</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-weight"></i>
+                    <h3>Control de Peso</h3>
+                    <p>Programas para pérdida, aumento o mantenimiento de peso</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Nutrición Clínica</h3>
+                    <p>Manejo de diabetes, hipertensión, colesterol y otras condiciones</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Nutrición Deportiva</h3>
+                    <p>Optimiza tu rendimiento físico con alimentación especializada</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Patricia Barajas</h2>
+                    <h3>Nutrióloga Certificada</h3>
+                    <p>Hola soy Paty Barajas licenciada en nutrición, con 5 años de experiencia en el ámbito nutricional. Mi misión es ayudar a que mis pacientes logren conocer su mejor versión. Siempre he dicho que cada persona que entra a mi consultorio se vuelve un proyecto para mí, que tengo que pulir hasta transformarlo.</p>
+                    <p>Vivo enamorada de mi carrera, por lo cual busco capacitarme constantemente, para contar con los conocimientos necesarios. Soy feliz brindando cada una de las herramientas necesarias en consulta para lograr objetivos y en el camino de este proceso a la transformación busco que el paciente se sienta acompañado.</p>
+                    <p>Estoy en un punto de mi vida en el que me encuentro orgullosa de lo que he logrado con muchas de las personas que se acercan a mí para cambiar su vida.</p>
+                    <div class="credentials">
+                        <div class="credential">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Universidad De Guadalajara (UDG)</span>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificación en nutrición deportiva</span>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificación en dieta cetogénica baja en grasa</span>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificación como entrenadora en fisicoculturismo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/paty.jpg" alt="Patricia Barajas Nutrióloga">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculadora IMC -->
+    <section class="imc-calculator">
+        <div class="container">
+            <h2 class="section-title">Calculadora IMC</h2>
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="peso">Peso (kg):</label>
+                        <input type="number" id="peso" placeholder="Ej. 68">
+                    </div>
+                    <div class="form-group">
+                        <label for="altura">Altura (cm):</label>
+                        <input type="number" id="altura" placeholder="Ej. 165">
+                    </div>
+                    <button id="calcular-btn" class="btn">Calcular IMC</button>
+                </div>
+                <div class="calculator-result">
+                    <div id="resultado-imc" class="result-box">
+                        <p>Tu resultado aparecerá aquí</p>
+                    </div>
+                    <div class="imc-scale">
+                        <div class="scale-item underweight">
+                            <span>&lt; 18.5</span>
+                            <p>Bajo peso</p>
+                        </div>
+                        <div class="scale-item normal">
+                            <span>18.5 - 24.9</span>
+                            <p>Normal</p>
+                        </div>
+                        <div class="scale-item overweight">
+                            <span>25 - 29.9</span>
+                            <p>Sobrepeso</p>
+                        </div>
+                        <div class="scale-item obese">
+                            <span>&gt; 30</span>
+                            <p>Obesidad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Testimonios</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Gracias al plan de Patricia logré perder 15 kg de manera saludable y lo mejor es que no lo he recuperado."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonio1.jpg" alt="Cliente 1">
+                        <h4>María González</h4>
+                        <span>Paciente desde 2020</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Mi relación con la comida cambió completamente. Ahora disfruto de comer bien sin remordimientos."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonio2.jpg" alt="Cliente 2">
+                        <h4>Carlos Mendoza</h4>
+                        <span>Paciente desde 2021</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Como deportista profesional, la asesoría nutricional de Patricia ha sido clave para mi rendimiento."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonio3.jpg" alt="Cliente 3">
+                        <h4>Ana Torres</h4>
+                        <span>Atleta profesional</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section id="blog" class="blog-preview">
+        <div class="container">
+            <h2 class="section-title">Artículos Recientes</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="images/blog1.jpg" alt="Alimentos saludables">
+                    <div class="blog-content">
+                        <h3>5 Desayunos Saludables para Empezar tu Día</h3>
+                        <p>Ideas rápidas y nutritivas para el desayuno cuando tienes poco tiempo...</p>
+                        <a href="#" class="read-more">Leer más</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="images/blog2.jpg" alt="Mitos nutricionales">
+                    <div class="blog-content">
+                        <h3>Mitos Comunes sobre la Pérdida de Peso</h3>
+                        <p>Desmentimos los 5 mitos más frecuentes que escuchamos en consulta...</p>
+                        <a href="#" class="read-more">Leer más</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="images/blog3.jpg" alt="Superalimentos">
+                    <div class="blog-content">
+                        <h3>Los Superalimentos que Deberías Incluir en tu Dieta</h3>
+                        <p>Descubre estos alimentos llenos de nutrientes y cómo incorporarlos...</p>
+                        <a href="#" class="read-more">Leer más</a>
+                    </div>
+                </article>
+            </div>
+            <div class="view-all">
+                <a href="#" class="btn">Ver Todos los Artículos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Agenda tu Consulta</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Ontario 1384, colonia providencia, Jalisco</p>
+                        <p>Hidalgo 98c, Atequiza, Jalisco</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>8441606727</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>nutripaty1296@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Lunes a Viernes: 9:00 - 18:00 hrs<br>Sábados: 9:00 - 14:00 hrs</p>
+                    </div>
+                    <div class="social-media">
+                        <a href="https://www.facebook.com/share/1BnHGTs1Vr/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/lau_12b?igsh=MTlndXhpMGRuemtmcQ==" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/528441606727" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <div class="whatsapp-form-notice">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Todos los datos se enviarán directamente por WhatsApp para agilizar tu atención</span>
+                    </div>
+                    <form id="consulta-form" onsubmit="enviarWhatsApp(event)">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo*:</label>
+                            <input type="text" id="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono*:</label>
+                            <input type="tel" id="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="servicio">Servicio de Interés*:</label>
+                            <select id="servicio" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="Plan Nutricional Personalizado">Plan Nutricional Personalizado</option>
+                                <option value="Control de Peso">Control de Peso</option>
+                                <option value="Nutrición Clínica">Nutrición Clínica</option>
+                                <option value="Nutrición Deportiva">Nutrición Deportiva</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje o preferencias:</label>
+                            <textarea id="mensaje" rows="4" placeholder="Horarios preferidos, alergias alimenticias, etc."></textarea>
+                        </div>
+                        <button type="submit" class="btn whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Clínica de Nutrición <span>by Patricia Barajas</span></h3>
+                    <p>Transformando vidas a través de la nutrición</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#sobre-mi">Sobre Mí</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Ontario 1384, Providencia</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Hidalgo 98c, Atequiza</p>
+                    <p><i class="fas fa-phone"></i> 8441606727</p>
+                    <p><i class="fas fa-envelope"></i> nutripaty1296@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Clínica de Nutrición by Patricia Barajas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Función para enviar formulario a WhatsApp
+        function enviarWhatsApp(event) {
+            event.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const email = document.getElementById('email').value;
+            const servicio = document.getElementById('servicio').value;
+            const mensaje = document.getElementById('mensaje').value;
+            
+            const texto = `¡Hola! Soy *${nombre}* y quiero agendar una consulta:
+
+📋 *Servicio solicitado:* ${servicio}
+📱 *Teléfono:* ${telefono}
+📧 *Email:* ${email || 'No proporcionado'}
+
+📝 *Mensaje:*
+${mensaje || 'Sin mensaje adicional'}
+
+📍 *Clínicas:*
+- Ontario 1384, colonia providencia, Jalisco
+- Hidalgo 98c, Atequiza, Jalisco
+
+*Horario de atención:*
+Lunes a Viernes: 9:00 - 18:00 hrs
+Sábados: 9:00 - 14:00 hrs`;
+
+            const urlWhatsApp = `https://wa.me/528441606727?text=${encodeURIComponent(texto)}`;
+            window.open(urlWhatsApp, '_blank');
+            
+            // Opcional: Resetear el formulario después de enviar
+            event.target.reset();
+        }
+
+        // Calculadora IMC
+        document.getElementById('calcular-btn').addEventListener('click', function() {
+            const peso = parseFloat(document.getElementById('peso').value);
+            const altura = parseFloat(document.getElementById('altura').value) / 100; // Convertir cm a m
+            
+            if (isNaN(peso) || isNaN(altura) || altura === 0) {
+                document.getElementById('resultado-imc').innerHTML = '<p>Por favor ingresa valores válidos</p>';
+                return;
+            }
+            
+            const imc = peso / (altura * altura);
+            let mensaje = '';
+            let color = '';
+            
+            if (imc < 18.5) {
+                mensaje = `Tu IMC es ${imc.toFixed(1)} (Bajo peso)`;
+                color = '#2196F3';
+            } else if (imc >= 18.5 && imc <= 24.9) {
+                mensaje = `Tu IMC es ${imc.toFixed(1)} (Peso normal)`;
+                color = '#4CAF50';
+            } else if (imc >= 25 && imc <= 29.9) {
+                mensaje = `Tu IMC es ${imc.toFixed(1)} (Sobrepeso)`;
+                color = '#FFC107';
+            } else {
+                mensaje = `Tu IMC es ${imc.toFixed(1)} (Obesidad)`;
+                color = '#F44336';
+            }
+            
+            const resultadoElement = document.getElementById('resultado-imc');
+            resultadoElement.innerHTML = `<p style="color: ${color}; font-weight: bold;">${mensaje}</p>`;
+        });
+    </script>
+</body>
+</html>
