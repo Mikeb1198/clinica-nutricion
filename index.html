@@ -312,7 +312,7 @@
                     <div class="whatsapp-form-notice">
                         <i class="fab fa-whatsapp"></i>
                         <span>Todos los datos se enviarán directamente por WhatsApp para agilizar tu atención</span>
-                                        </div>
+                    </div>
                     <form id="consulta-form" onsubmit="enviarWhatsApp(event)">
                         <div class="form-group">
                             <label for="nombre">Nombre Completo*</label>
@@ -440,7 +440,7 @@
 📧 *Email:* ${email || 'No proporcionado'}
 
 📝 *Información adicional:*
-${mensaje || 'Ninguna'}
+${mensaje || 'Ninguna'}`;
 
             // Abrir WhatsApp
             window.open(`https://wa.me/528441606727?text=${encodeURIComponent(texto)}`, '_blank');
