@@ -425,6 +425,8 @@ a {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s;
 }
 
 .blog-content {
@@ -442,10 +444,16 @@ a {
 }
 
 .read-more {
+    color: var(--accent-color);
     font-weight: 600;
-    font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
+    transition: all 0.3s;
+    padding: 5px 0;
+}
+
+.read-more:hover {
+    color: var(--dark-color);
 }
 
 .read-more::after {
@@ -455,7 +463,7 @@ a {
 }
 
 .read-more:hover::after {
-    margin-left: 10px;
+    margin-left: 8px;
 }
 
 .view-all {
@@ -496,7 +504,7 @@ a {
 .social-media {
     display: flex;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .social-media a {
@@ -505,20 +513,16 @@ a {
     justify-content: center;
     width: 40px;
     height: 40px;
+    background-color: var(--accent-color);
+    color: var(--light-color);
     border-radius: 50%;
-    color: white;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
 }
 
 .social-media a:hover {
+    background-color: var(--dark-color);
     transform: translateY(-3px);
-    opacity: 0.9;
 }
-
-/* Colores específicos por red social */
-.social-media a:nth-child(1) { background: #3b5998; } /* Facebook */
-.social-media a:nth-child(2) { background: #e1306c; } /* Instagram */
-.social-media a:nth-child(3) { background: #25d366; } /* WhatsApp */
 
 /* Footer */
 .footer {
@@ -586,7 +590,10 @@ a {
     color: #bbb;
 }
 
-/* Responsive */
+/* ==================== */
+/* MEDIA QUERIES MOBILE */
+/* ==================== */
+
 @media (max-width: 992px) {
     .about-content {
         flex-direction: column;
@@ -602,20 +609,130 @@ a {
 }
 
 @media (max-width: 768px) {
+    /* Ajustes generales */
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    body {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+    
+    /* Header Mobile */
+    .header {
+        padding: 10px 0;
+    }
+    
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+    
     .navigation ul {
         display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--light-color);
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    
+    .navigation ul.show {
+        display: flex;
+    }
+    
+    .navigation ul li {
+        margin: 0;
+        text-align: center;
+        padding: 12px 0;
     }
     
     .mobile-menu {
         display: block;
     }
     
-    .hero-content h2 {
-        font-size: 2.2rem;
+    /* Hero Section Mobile */
+    .hero {
+        height: auto;
+        padding: 100px 0 60px;
     }
     
-    .section-title {
-        font-size: 2rem;
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* Servicios Mobile */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Blog Mobile */
+    .blog-preview {
+        padding: 50px 0;
+    }
+    
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .blog-card {
+        margin-bottom: 20px;
+    }
+    
+    .blog-card img {
+        height: 180px;
+    }
+    
+    .blog-content {
+        padding: 15px;
+    }
+    
+    .blog-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .blog-content p {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+    
+    .read-more {
+        font-size: 0.95rem;
+    }
+    
+    .view-all .btn {
+        width: 100%;
+        padding: 12px;
+    }
+    
+    /* Testimonios Mobile */
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Contacto Mobile */
+    .whatsapp-form-notice {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .time-slots {
+        grid-template-columns: 1fr;
     }
     
     .imc-scale {
@@ -625,7 +742,7 @@ a {
 
 @media (max-width: 576px) {
     .hero-content h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     
     .section-title {
@@ -633,6 +750,10 @@ a {
     }
     
     .imc-scale {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
         grid-template-columns: 1fr;
     }
 }
