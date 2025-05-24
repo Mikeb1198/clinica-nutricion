@@ -496,7 +496,7 @@ a {
 .social-media {
     display: flex;
     gap: 15px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .social-media a {
@@ -505,16 +505,20 @@ a {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: var(--accent-color);
-    color: var(--light-color);
     border-radius: 50%;
-    transition: all 0.3s;
+    color: white;
+    transition: all 0.3s ease;
 }
 
 .social-media a:hover {
-    background-color: var(--dark-color);
     transform: translateY(-3px);
+    opacity: 0.9;
 }
+
+/* Colores específicos por red social */
+.social-media a:nth-child(1) { background: #3b5998; } /* Facebook */
+.social-media a:nth-child(2) { background: #e1306c; } /* Instagram */
+.social-media a:nth-child(3) { background: #25d366; } /* WhatsApp */
 
 /* Footer */
 .footer {
