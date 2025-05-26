@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción al Reto | Clínica de Nutrición</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .reto-detalles {
+            padding: 80px 0;
+            background-color: #FFF8E1;
+        }
+        .reto-contenido {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        .reto-info {
+            flex: 1;
+        }
+        .reto-imagen {
+            flex: 1;
+        }
+        .reto-imagen img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .formulario-reto {
+            margin-top: 30px;
+        }
+        @media (max-width: 768px) {
+            .reto-contenido {
+                flex-direction: column;
+            }
+            .reto-imagen {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <!-- Copia el mismo header de tu index.html -->
+    </header>
+
+    <section class="reto-detalles">
+        <div class="container">
+            <h1 class="section-title">Reto "Transforma tu Vida"</h1>
+            
+            <div class="reto-contenido">
+                <div class="reto-info">
+                    <h2>Programa completo de 30 días:</h2>
+                    <ul style="margin: 20px 0; list-style: none;">
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Plan alimenticio personalizado</li>
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Seguimiento nutricional diario</li>
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Recetario exclusivo</li>
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Guía de ejercicios en casa</li>
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Comunidad de apoyo</li>
+                    </ul>
+                    
+                    <form class="formulario-reto" id="formInscripcion">
+                        <div class="form-group">
+                            <label for="nombre-reto">Nombre completo*</label>
+                            <input type="text" id="nombre-reto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-reto">Email*</label>
+                            <input type="email" id="email-reto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp-reto">WhatsApp*</label>
+                            <input type="tel" id="whatsapp-reto" required>
+                        </div>
+                        <button type="submit" class="btn" style="background-color: var(--dark-color);">Confirmar inscripción</button>
+                    </form>
+                </div>
+                
+                <div class="reto-imagen">
+                    <img src="images/reto-detalle.jpg" alt="Detalles del reto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('formInscripcion').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre-reto').value;
+            const email = document.getElementById('email-reto').value;
+            const whatsapp = document.getElementById('whatsapp-reto').value;
+            
+            const mensaje = `Nueva inscripción al reto:
+Nombre: ${nombre}
+Email: ${email}
+WhatsApp: ${whatsapp}`;
+            
+            window.open(`https://wa.me/528441606727?text=${encodeURIComponent(mensaje)}`, '_blank');
+        });
+    </script>
+</body>
+</html>
