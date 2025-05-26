@@ -8,6 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        :root {
+            --primary-color: #ff5722;  /* Naranja vibrante */
+            --secondary-color: #ddd9d9; /* Amarillo vibrante */
+            --accent-color: #ff5722;   /* Verde */
+            --dark-color: #e91e63;     /* Rosa fuerte */
+            --light-color: #fff;
+            --text-color: #333;
+            --text-dark: #000;
+            }
         .whatsapp-form-notice {
             background-color: #25D36620;
             border-left: 4px solid #25D366;
@@ -52,14 +61,30 @@
         input[type="radio"] + label, input[type="checkbox"] + label {
             cursor: pointer;
         }
+
+        /* Estilos para la sección del reto */
+        .reto-section {
+            background-color: #FFF8E1;
+            padding: 80px 0;
+        }
+        .reto-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .reto-highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <!-- Header/Navegación -->
-    <header class="header">
+<header class="header">
     <div class="container">
-        <div class="logo">
-            <img src="../images/logo-cliniuca.png" alt="Logo">
+        <div class="logo-text"> <!-- Eliminamos el contenedor del logo -->
             <h1>Clínica de Nutrición <span>by Patricia Barajas</span></h1>
         </div>
         <nav class="navigation">
@@ -84,7 +109,10 @@
             <div class="hero-content">
                 <h2>Transforma tu salud con nutrición personalizada</h2>
                 <p>Programas de alimentación diseñados específicamente para tus necesidades</p>
-                <a href="#contacto" class="btn">Agendar Consulta</a>
+                <div style="display: flex; justify-content: center; gap: 15px;">
+                <a href="cita.html" class="btn">Agendar Consulta</a>
+                <a href="reto.html" class="btn" style="background-color: var(--dark-color);">¡Inscríbete al Reto!</a>
+                </div>
             </div>
         </div>
     </section>
@@ -125,9 +153,8 @@
                 <div class="about-text">
                     <h2 class="section-title">Patricia Barajas</h2>
                     <h3>Nutrióloga Certificada</h3>
-                    <p>Hola soy Paty Barajas licenciada en nutrición, con 5 años de experiencia en el ámbito nutricional. Mi misión es ayudar a que mis pacientes logren conocer su mejor versión. Siempre he dicho que cada persona que entra a mi consultorio se vuelve un proyecto para mí, que tengo que pulir hasta transformarlo.</p>
-                    <p>Vivo enamorada de mi carrera, por lo cual busco capacitarme constantemente, para contar con los conocimientos necesarios. Soy feliz brindando cada una de las herramientas necesarias en consulta para lograr objetivos y en el camino de este proceso a la transformación busco que el paciente se sienta acompañado.</p>
-                    <p>Estoy en un punto de mi vida en el que me encuentro orgullosa de lo que he logrado con muchas de las personas que se acercan a mí para cambiar su vida.</p>
+                    <p>Soy Paty, Licenciada en Nutrición con cinco años de experiencia. Para mí, cada paciente es un proyecto de vida al que acompaño con dedicación hasta que logra.</p>
+                    <p>descubrir su mejor versión. Creo en una nutrición que transforma, uniendo mente, cuerpo y bienestar en un solo camino hacia el amor propio.</p>
                     <div class="credentials">
                         <div class="credential">
                             <i class="fas fa-graduation-cap"></i>
@@ -154,44 +181,26 @@
         </div>
     </section>
 
-    <!-- Calculadora IMC -->
-    <section class="imc-calculator">
+     <!-- Sección del Reto -->
+    <section id="reto-peso" class="reto-section">
         <div class="container">
-            <h2 class="section-title">Calculadora IMC</h2>
-            <div class="calculator-container">
-                <div class="calculator-form">
-                    <div class="form-group">
-                        <label for="peso">Peso (kg):</label>
-                        <input type="number" id="peso" placeholder="Ej. 68">
-                    </div>
-                    <div class="form-group">
-                        <label for="altura">Altura (cm):</label>
-                        <input type="number" id="altura" placeholder="Ej. 165">
-                    </div>
-                    <button id="calcular-btn" class="btn">Calcular IMC</button>
+            <h2 class="section-title">Reto "Transforma tu Vida"</h2>
+            <div class="reto-content">
+                <div class="reto-card">
+                    <h3 style="color: var(--primary-color); margin-bottom: 20px;">¡Inscríbete a nuestro reto de 30 días para bajar de peso!</h3>
+                    <p>Este programa incluye:</p>
+                    <ul style="margin: 20px 0;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Plan alimenticio personalizado</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Recetario exclusivo</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Guía de ejercicios en casa</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Soporte nutricional 24/7</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Comunidad privada de apoyo</li>
+                    </ul>
+                    <p class="reto-highlight"></p>
+                    <a href="#contacto" class="btn" style="background-color: var(--dark-color);">Quiero inscribirme</a>
                 </div>
-                <div class="calculator-result">
-                    <div id="resultado-imc" class="result-box">
-                        <p>Tu resultado aparecerá aquí</p>
-                    </div>
-                    <div class="imc-scale">
-                        <div class="scale-item underweight">
-                            <span>&lt; 18.5</span>
-                            <p>Bajo peso</p>
-                        </div>
-                        <div class="scale-item normal">
-                            <span>18.5 - 24.9</span>
-                            <p>Normal</p>
-                        </div>
-                        <div class="scale-item overweight">
-                            <span>25 - 29.9</span>
-                            <p>Sobrepeso</p>
-                        </div>
-                        <div class="scale-item obese">
-                            <span>&gt; 30</span>
-                            <p>Obesidad</p>
-                        </div>
-                    </div>
+                <div>
+                    <img src="images/reto-saludable.jpg" alt="Reto de pérdida de peso" style="width: 15%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
                 </div>
             </div>
         </div>
