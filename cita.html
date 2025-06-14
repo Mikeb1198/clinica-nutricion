@@ -3,39 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendar Cita | Clínica de Nutrición</title>
+    <title>Agendar Cita | Clínica de Nutrición by Patricia Barajas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .agendar-cita {
+            padding: 80px 0;
+        }
+        .cita-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .modalidades-list {
+            margin-bottom: 30px;
+        }
+        .modalidades-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .modalidades-list i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        @media (max-width: 768px) {
+            .cita-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
-        <!-- Copia el mismo header de tu index.html -->
+        <div class="container">
+            <div class="logo">
+                <h1>Clínica de Nutrición <span>by Patricia Barajas</span></h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="reto.html">Reto</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <section class="agendar-cita" style="padding: 80px 0;">
+    <section class="agendar-cita">
         <div class="container">
             <h1 class="section-title">Agenda tu Consulta</h1>
             
-            <div style="display: flex; gap: 50px;">
-                <div style="flex: 1;">
+            <div class="cita-container">
+                <div class="modalidades-info">
                     <h3 style="color: var(--primary-color); margin-bottom: 20px;">Modalidades disponibles:</h3>
-                    <ul style="margin-bottom: 30px; list-style: none;">
-                        <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Consulta presencial</li>
-                        <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Consulta virtual</li>
-                        <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Paquetes mensuales</li>
+                    <ul class="modalidades-list">
+                        <li><i class="fas fa-check"></i> Consulta presencial en clínica</li>
+                        <li><i class="fas fa-check"></i> Consulta virtual por videollamada</li>
+                        <li><i class="fas fa-check"></i> Paquetes mensuales personalizados</li>
+                        <li><i class="fas fa-check"></i> Seguimiento nutricional continuo</li>
                     </ul>
+                    
                     <div class="whatsapp-form-notice">
                         <i class="fab fa-whatsapp"></i>
-                        <span>Todas las consultas se confirman por WhatsApp</span>
+                        <span>Todas las citas se confirman directamente por WhatsApp</span>
+                    </div>
+                    
+                    <div class="beneficios" style="margin-top: 30px;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 15px;">Beneficios:</h4>
+                        <ul class="modalidades-list">
+                            <li><i class="fas fa-star"></i> Primera consulta con evaluación completa</li>
+                            <li><i class="fas fa-star"></i> Plan alimenticio 100% personalizado</li>
+                            <li><i class="fas fa-star"></i> Ajustes según tu progreso</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div style="flex: 1;">
-                    <!-- Copia el mismo formulario de contacto de tu index.html -->
+                <div class="formulario-cita">
+                    <form id="citaForm">
+                        <div class="form-group">
+                            <label for="nombre-cita">Nombre completo*</label>
+                            <input type="text" id="nombre-cita" name="nombre" placeholder="Ej: María González" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono-cita">WhatsApp*</label>
+                            <input type="tel" id="telefono-cita" name="telefono" pattern="[0-9]{10}" placeholder="Ej: 8441606727" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="modalidad-cita">Modalidad preferida*</label>
+                            <select id="modalidad-cita" name="modalidad" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="Presencial">Consulta Presencial</option>
+                                <option value="Virtual">Consulta Virtual</option>
+                                <option value="Paquete">Paquete Mensual</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fecha-cita">Fecha preferida*</label>
+                            <input type="date" id="fecha-cita" name="fecha" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje-cita">Comentarios adicionales</label>
+                            <textarea id="mensaje-cita" name="mensaje" rows="3" placeholder="Objetivos, alergias, etc."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">
+                            <i class="fab fa-whatsapp"></i> Enviar solicitud
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        document.getElementById('citaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validar teléfono
+            const telefono = document.getElementById('telefono-cita').value;
+            if (!/^[0-9]{10}$/.test(telefono)) {
+                alert('Por favor ingresa un número de WhatsApp válido (10 dígitos)');
+                return;
+            }
+            
+            // Obtener datos del formulario
+            const formData = new FormData(this);
+            let mensaje = '¡Quiero agendar una cita!\n\n';
+            
+            for (let [key, value] of formData.entries()) {
+                if (value.trim() !== '') {
+                    mensaje += `• ${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}\n`;
+                }
+            }
+            
+            // Redirigir a WhatsApp
+            window.open(`https://wa.me/528441606727?text=${encodeURIComponent(mensaje)}`, '_blank');
+        });
+    </script>
 </body>
 </html>
