@@ -97,3 +97,20 @@ window.addEventListener('scroll', function() {
         header.style.padding = '15px 0';
     }
 });
+function enviarWhatsApp(event) {
+    event.preventDefault();
+    
+    const nombre = document.getElementById('nombre').value;
+    const servicio = document.getElementById('servicio').value;
+    const clinica = document.getElementById('clinica').value;
+    const horario = document.getElementById('horario').value;
+
+    const mensaje = `Hola Paty! Soy *${nombre}*. Me interesa el servicio de *${servicio}*. 
+Preferiría la clínica de *${clinica}* en el horario de *${horario}*.`;
+
+    const url = `https://wa.me/528441606727?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+}
+
+// Escuchar el formulario
+document.getElementById('consulta-form')?.addEventListener('submit', enviarWhatsApp);
