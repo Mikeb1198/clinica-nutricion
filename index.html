@@ -2,468 +2,149 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <meta name="theme-color" content="#A5D6A7"> <!-- Color de la barra de estado en móviles -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Clínica de Nutrición by Patricia Barajas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transforma tu salud con Patricia Barajas, nutrióloga certificada. Planes personalizados, nutrición deportiva y clínica en Providencia y Atequiza.">
+    <meta name="theme-color" content="#4CAF50">
+    
+    <meta property="og:title" content="Clínica de Nutrición | Patricia Barajas">
+    <meta property="og:description" content="Agenda tu cita para un plan nutricional personalizado y transforma tu vida.">
+    <meta property="og:image" content="images/paty.jpg"> 
+    
+    <title>Clínica de Nutrición | Patricia Barajas</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+
     <style>
         :root {
-            --primary-color: #ff5722;  /* Naranja vibrante */
-            --secondary-color: #ddd9d9; /* Amarillo vibrante */
-            --accent-color: #ff5722;   /* Verde */
-            --dark-color: #e91e63;     /* Rosa fuerte */
-            --light-color: #fff;
+            --primary-color: #4CAF50;    /* Verde Salud */
+            --secondary-color: #2E7D32;  /* Verde Oscuro */
+            --accent-color: #FF9800;     /* Naranja para botones de acción */
+            --dark-color: #2c3e50;       /* Azul Grisáceo Profesional */
+            --light-color: #ffffff;
+            --bg-light: #f4f7f6;
             --text-color: #333;
-            --text-dark: #000;
-            }
-        .whatsapp-form-notice {
-            background-color: #25D36620;
-            border-left: 4px solid #25D366;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .radio-group {
-            display: flex;
-            gap: 15px;
-            margin-top: 8px;
-        }
-        .radio-option {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .time-slots {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 8px;
-        }
-        .time-slot {
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .time-slot:hover, .time-slot.selected {
-            background-color: #A5D6A7;
-            border-color: #4CAF50;
-        }
-        input[type="radio"], input[type="checkbox"] {
-            display: none;
-        }
-        input[type="radio"] + label, input[type="checkbox"] + label {
-            cursor: pointer;
         }
 
-        /* Estilos para la sección del reto */
-        .reto-section {
-            background-color: #FFF8E1;
-            padding: 80px 0;
+        /* Mejora del Botón Flotante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
         }
-        .reto-card {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
+        .whatsapp-float:hover { transform: scale(1.1); color: white; }
+
+        /* Ajuste sección Reto */
+        .reto-section { background-color: #e8f5e9; padding: 60px 0; }
+        .reto-container { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 30px; 
+            align-items: center; 
+            justify-content: center;
         }
-        .reto-highlight {
-            color: var(--primary-color);
-            font-weight: bold;
+        .reto-card { flex: 1; min-width: 300px; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .reto-image { flex: 1; min-width: 300px; text-align: center; }
+        .reto-image img { width: 100%; max-width: 450px; border-radius: 15px; }
+
+        /* Estilos de formulario mejorados */
+        .time-slot.selected {
+            background-color: var(--primary-color) !important;
+            color: white;
+            border-color: var(--secondary-color);
         }
     </style>
 </head>
 <body>
-    <!-- Header/Navegación -->
-<header class="header">
-    <div class="container">
-        <div class="logo-text"> <!-- Eliminamos el contenedor del logo -->
-            <h1>Clínica de Nutrición <span>by Patricia Barajas</span></h1>
-        </div>
-        <nav class="navigation">
+
+    <a href="https://wa.me/528441606727" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo-text">
+                <h1>Clínica de Nutrición <span style="color: var(--primary-color);">by Patricia Barajas</span></h1>
+            </div>
+            <nav class="navigation">
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#testimonios">Testimonios</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#contacto" class="btn-small">Agendar</a></li>
                 </ul>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
             </nav>
         </div>
     </header>
 
-    <!-- Sección Hero -->
-    <section id="inicio" class="hero">
+    <section id="inicio" class="hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-bg.jpg'); background-size: cover;">
         <div class="container">
             <div class="hero-content">
-                <h2>Transforma tu salud con nutrición personalizada</h2>
-                <p>Programas de alimentación diseñados específicamente para tus necesidades</p>
-                <div style="display: flex; justify-content: center; gap: 15px;">
-                <a href="cita.html" class="btn">Agendar Consulta</a>
-                <a href="reto.html" class="btn" style="background-color: var(--dark-color);">¡Inscríbete al Reto!</a>
+                <h2 style="font-size: 2.5rem;">Tu mejor versión comienza con lo que comes</h2>
+                <p>Nutrición científica y humana para transformar tu estilo de vida.</p>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="#contacto" class="btn" style="background-color: var(--primary-color);">Agendar Consulta</a>
+                    <a href="reto.html" class="btn" style="background-color: var(--dark-color);">Inscribirme al Reto</a>
                 </div>
             </div>
         </div>
     </section>
 
-        <!-- Sección Sobre Mí -->
     <section id="sobre-mi" class="about">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
                     <h2 class="section-title">Patricia Barajas</h2>
-                    <h3>Nutrióloga Certificada</h3>
-                    <p>Soy Paty, Licenciada en Nutrición con cinco años de experiencia. Para mí, cada paciente es un proyecto de vida al que acompaño con dedicación hasta que logra.</p>
-                    <p>descubrir su mejor versión. Creo en una nutrición que transforma, uniendo mente, cuerpo y bienestar en un solo camino hacia el amor propio.</p>
+                    <h3 style="color: var(--primary-color);">Nutrióloga Certificada</h3>
+                    <p>Soy Paty, Licenciada en Nutrición con cinco años de experiencia. Para mí, cada paciente es un proyecto de vida único.</p>
+                    <p>Mi enfoque une <strong>mente, cuerpo y bienestar</strong> para acompañarte hacia el amor propio a través de la alimentación.</p>
                     <div class="credentials">
-                        <div class="credential">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Universidad De Guadalajara (UDG)</span>
-                        </div>
-                        <div class="credential">
-                            <i class="fas fa-certificate"></i>
-                            <span>Certificación en nutrición deportiva</span>
-                        </div>
-                        <div class="credential">
-                            <i class="fas fa-certificate"></i>
-                            <span>Certificación en dieta cetogénica baja en grasa</span>
-                        </div>
-                        <div class="credential">
-                            <i class="fas fa-certificate"></i>
-                            <span>Certificación como entrenadora en fisicoculturismo</span>
-                        </div>
+                        <div class="credential"><i class="fas fa-graduation-cap"></i> <span>Egresada de UDG</span></div>
+                        <div class="credential"><i class="fas fa-dumbbell"></i> <span>Nutrición Deportiva</span></div>
+                        <div class="credential"><i class="fas fa-leaf"></i> <span>Especialista en Dieta Cetogénica</span></div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="images/paty.jpg" alt="Patricia Barajas Nutrióloga">
+                    <img src="images/paty.jpg" alt="Patricia Barajas" style="border-radius: 50%; border: 5px solid var(--primary-color);">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección Servicios -->
-    <section id="servicios" class="services">
-        <div class="container">
-            <h2 class="section-title">Nuestros Servicios</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-utensils"></i>
-                    <h3>Plan Nutricional Personalizado</h3>
-                    <p>Diseñado según tus objetivos, gustos y necesidades específicas</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-weight"></i>
-                    <h3>Control de Peso</h3>
-                    <p>Programas para pérdida, aumento o mantenimiento de peso</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-heartbeat"></i>
-                    <h3>Nutrición Clínica</h3>
-                    <p>Manejo de diabetes, hipertensión, colesterol y otras condiciones</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-dumbbell"></i>
-                    <h3>Nutrición Deportiva</h3>
-                    <p>Optimiza tu rendimiento físico con alimentación especializada</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-     <!-- Sección del Reto -->
-    <section id="reto-peso" class="reto-section">
+    <section id="reto" class="reto-section">
         <div class="container">
             <h2 class="section-title">Reto "Transforma tu Vida"</h2>
-            <div class="reto-content">
+            <div class="reto-container">
                 <div class="reto-card">
-                    <h3 style="color: var(--primary-color); margin-bottom: 20px;">¡Inscríbete a nuestro reto de 30 días para bajar de peso!</h3>
-                    <p>Este programa incluye:</p>
-                    <ul style="margin: 20px 0;">
-                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Plan alimenticio personalizado</li>
-                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Recetario exclusivo</li>
-                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Guía de ejercicios en casa</li>
-                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Soporte nutricional 24/7</li>
-                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Comunidad privada de apoyo</li>
+                    <h3>¡30 días para renovarte!</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> Plan personalizado</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> Recetario Saludable</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> Soporte 24/7 vía WhatsApp</li>
                     </ul>
-                    <p class="reto-highlight"></p>
-                    <a href="#contacto" class="btn" style="background-color: var(--dark-color);">Quiero inscribirme</a>
+                    <a href="#contacto" class="btn" style="width: 100%; margin-top: 20px;">¡Quiero empezar ya!</a>
                 </div>
-                <div>
-                    <img src="images/reto-saludable.jpg" alt="Reto de pérdida de peso" style="width: 15%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonios -->
-    <section id="testimonios" class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Testimonios</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Gracias al plan de Patricia logré perder 15 kg de manera saludable y lo mejor es que no lo he recuperado."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="images/testimonio1.jpg" alt="Cliente 1">
-                        <h4>María González</h4>
-                        <span>Paciente desde 2020</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Mi relación con la comida cambió completamente. Ahora disfruto de comer bien sin remordimientos."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="images/testimonio2.jpg" alt="Cliente 2">
-                        <h4>Karla Mendoza</h4>
-                        <span>Paciente desde 2021</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Como deportista, la asesoría nutricional de Patricia ha sido clave para mis resultado."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="images/testimonio3.jpg" alt="Cliente 3">
-                        <h4>Ana Torres</h4>
-                        <span>Atleta profesional</span>
-                    </div>
+                <div class="reto-image">
+                    <img src="images/reto-saludable.jpg" alt="Vida Saludable">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Blog Preview -->
-    <section id="blog" class="blog-preview">
-    <div class="container">
-        <h2 class="section-title">Artículos Recientes</h2>
-        <div class="blog-grid">
-            <!-- Blog 1 -->
-            <article class="blog-card">
-                <img src="images/blog1.jpg" alt="Desayunos saludables">
-                <div class="blog-content">
-                    <h3>5 Desayunos Saludables para Empezar tu Día</h3>
-                    <p>Ideas rápidas y nutritivas para el desayuno cuando tienes poco tiempo...</p>
-                    <a href="blog/desayunos-saludables.html" class="read-more">Leer más</a>
-                </div>
-            </article>
-
-            <!-- Blog 2 -->
-            <article class="blog-card">
-                <img src="images/blog2.jpg" alt="Mitos nutricionales">
-                <div class="blog-content">
-                    <h3>Mitos Comunes sobre la Pérdida de Peso</h3>
-                    <p>Desmentimos los 5 mitos más frecuentes que escuchamos en consulta...</p>
-                    <a href="blog/mitos-perdida-peso.html" class="read-more">Leer más</a>
-                </div>
-            </article>
-
-            <!-- Blog 3 -->
-            <article class="blog-card">
-                <img src="images/blog3.jpg" alt="Superalimentos">
-                <div class="blog-content">
-                    <h3>Los Superalimentos que Deberías Incluir en tu Dieta</h3>
-                    <p>Descubre estos alimentos llenos de nutrientes y cómo incorporarlos...</p>
-                    <a href="blog/superalimentos.html" class="read-more">Leer más</a>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="contact">
-        <div class="container">
-            <h2 class="section-title">Agenda tu Consulta</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Información de Contacto</h3>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Ontario 1384, colonia providencia, Jalisco</p>
-                        <p>Hidalgo 98c, Atequiza, Jalisco</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <p>8441606727</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>nutripaty1296@gmail.com</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <p>Lunes a Viernes: 9:00 - 18:00 hrs<br>Sábados: 9:00 - 14:00 hrs</p>
-                    </div>
-                    <div class="social-media">
-                        <a href="https://www.facebook.com/share/1BnHGTs1Vr/" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.instagram.com/lau_12b?igsh=MTlndXhpMGRuemtmcQ==" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://wa.me/528441606727" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <div class="whatsapp-form-notice">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>Todos los datos se enviarán directamente por WhatsApp para agilizar tu atención</span>
-                    </div>
-                    <form id="consulta-form" onsubmit="enviarWhatsApp(event)">
-                        <div class="form-group">
-                            <label for="nombre">Nombre Completo*</label>
-                            <input type="text" id="nombre" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="telefono">Teléfono*</label>
-                            <input type="tel" id="telefono" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Correo Electrónico</label>
-                            <input type="email" id="email">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Tipo de Consulta*</label>
-                            <div class="radio-group">
-                                <div class="radio-option">
-                                    <input type="radio" id="presencial" name="tipo-consulta" value="Presencial" checked>
-                                    <label for="presencial">Presencial</label>
-                                </div>
-                                <div class="radio-option">
-                                    <input type="radio" id="online" name="tipo-consulta" value="Online">
-                                    <label for="online">Online</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group" id="clinica-group">
-                            <label for="clinica">Clínica*</label>
-                            <select id="clinica" required>
-                                <option value="">Selecciona una clínica</option>
-                                <option value="Ontario 1384, Providencia">Ontario 1384, Providencia</option>
-                                <option value="Hidalgo 98c, Atequiza">Hidalgo 98c, Atequiza</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="servicio">Servicio*</label>
-                            <select id="servicio" required>
-                                <option value="">Selecciona un servicio</option>
-                                <option value="Plan Nutricional Personalizado">Plan Nutricional Personalizado</option>
-                                <option value="Control de Peso">Control de Peso</option>
-                                <option value="Nutrición Clínica">Nutrición Clínica</option>
-                                <option value="Nutrición Deportiva">Nutrición Deportiva</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Horario Preferido*</label>
-                            <div class="time-slots">
-                                <div class="time-slot" data-time="09:00 - 11:00">Mañana: 9:00 - 11:00</div>
-                                <div class="time-slot" data-time="11:00 - 13:00">Mañana: 11:00 - 13:00</div>
-                                <div class="time-slot" data-time="13:00 - 15:00">Tarde: 13:00 - 15:00</div>
-                                <div class="time-slot" data-time="15:00 - 17:00">Tarde: 15:00 - 17:00</div>
-                                <div class="time-slot" data-time="17:00 - 19:00">Tarde-Noche: 17:00 - 19:00</div>
-                                <div class="time-slot" data-time="Sábado 9:00 - 14:00">Sábado: 9:00 - 14:00</div>
-                            </div>
-                            <input type="hidden" id="horario">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="mensaje">Mensaje adicional</label>
-                            <textarea id="mensaje" rows="3" placeholder="Alergias, condiciones médicas, etc."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Enviar Solicitud
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Mostrar/ocultar selección de clínica según tipo de consulta
-        document.querySelectorAll('input[name="tipo-consulta"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                document.getElementById('clinica-group').style.display = 
-                    this.value === 'Presencial' ? 'block' : 'none';
-            });
-        });
-
-        // Selección de horarios
-        document.querySelectorAll('.time-slot').forEach(slot => {
-            slot.addEventListener('click', function() {
-                document.querySelectorAll('.time-slot').forEach(s => 
-                    s.classList.remove('selected'));
-                this.classList.add('selected');
-                document.getElementById('horario').value = this.dataset.time;
-            });
-        });
-
-        // Función para enviar a WhatsApp
-        function enviarWhatsApp(event) {
-            event.preventDefault();
-            
-            // Validar horario seleccionado
-            const horario = document.getElementById('horario').value;
-            if (!horario) {
-                alert('Por favor selecciona un horario');
-                return;
-            }
-            
-            // Obtener valores del formulario
-            const nombre = document.getElementById('nombre').value;
-            const telefono = document.getElementById('telefono').value;
-            const email = document.getElementById('email').value;
-            const tipoConsulta = document.querySelector('input[name="tipo-consulta"]:checked').value;
-            const clinica = tipoConsulta === 'Presencial' ? document.getElementById('clinica').value : 'Consulta Online';
-            const servicio = document.getElementById('servicio').value;
-            const mensaje = document.getElementById('mensaje').value;
-            
-            // Crear mensaje estructurado
-            const texto = `¡Hola! Soy *${nombre}* y quiero agendar una consulta:
-
-📋 *Servicio solicitado:* ${servicio}
-📅 *Tipo de consulta:* ${tipoConsulta}
-📍 *Ubicación:* ${clinica}
-⏰ *Horario preferido:* ${horario}
-📱 *Teléfono:* ${telefono}
-📧 *Email:* ${email || 'No proporcionado'}
-
-📝 *Información adicional:*
-${mensaje || 'Ninguna'}`;
-
-            // Abrir WhatsApp
-            window.open(`https://wa.me/528441606727?text=${encodeURIComponent(texto)}`, '_blank');
-            
-            // Opcional: Resetear formulario
-            event.target.reset();
-            document.querySelectorAll('.time-slot').forEach(s => 
-                s.classList.remove('selected'));
-        }
-    </script>
-</body>
+    </body>
 </html>
