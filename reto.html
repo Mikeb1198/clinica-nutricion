@@ -3,63 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reto Transforma tu Vida | Clínica de Nutrición</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Reto 30 Días: Transforma tu Vida | Paty Barajas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .reto-hero {
+            background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(46, 125, 50, 0.8)), url('images/reto-bg.jpg') center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .price-tag {
+            font-size: 3rem;
+            color: var(--primary);
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .benefit-card {
+            background: #fff;
+            border-bottom: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .grid-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h1>Clínica de Nutrición <span>by Patricia Barajas</span></h1>
-            </div>
-            <nav class="navigation">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="index.html#servicios">Servicios</a></li>
-                    <li><a href="index.html#reto-peso">Reto</a></li>
-                    <li><a href="index.html#contacto">Contacto</a></li>
-                </ul>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
+    <header>
+        <nav class="container">
+            <div class="logo">NutriPaty</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Volver al Inicio</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="reto-detalles">
+    <section class="reto-hero">
         <div class="container">
-            <h1 class="section-title">Reto "Transforma tu Vida"</h1>
-            <div class="reto-content">
-                <div class="reto-info">
-                    <h2>Programa de 30 días incluye:</h2>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Plan alimenticio personalizado</li>
-                        <li><i class="fas fa-check"></i> Seguimiento nutricional diario</li>
-                        <li><i class="fas fa-check"></i> Recetario exclusivo</li>
-                        <li><i class="fas fa-check"></i> Guía de ejercicios en casa</li>
-                    </ul>
-                    <form id="formInscripcion">
-                        <div class="form-group">
-                            <input type="text" id="nombre-reto" placeholder="Nombre completo" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="whatsapp-reto" placeholder="WhatsApp (10 dígitos)" required>
-                        </div>
-                        <button type="submit" class="btn">Inscribirme ahora</button>
-                    </form>
+            <h1>Reto "Transforma tu Vida"</h1>
+            <p>30 días de acompañamiento integral para lograr tu mejor versión.</p>
+        </div>
+    </section>
+
+    <section class="container" style="padding: 60px 20px;">
+        <div style="text-align: center; max-width: 800px; margin: auto;">
+            <h2>¿Qué incluye el reto?</h2>
+            <p>No es solo una dieta, es un cambio de hábitos diseñado por expertos.</p>
+            
+            <div class="grid-benefits">
+                <div class="benefit-card">
+                    <i class="fas fa-calendar-alt fa-2x"></i>
+                    <h4>Plan 30 Días</h4>
+                    <p>Menú diario detallado.</p>
                 </div>
-                <div class="reto-imagen">
-                    <img src="images/reto-saludable.jpg" alt="Participantes del reto">
+                <div class="benefit-card">
+                    <i class="fas fa-book-open fa-2x"></i>
+                    <h4>Recetario</h4>
+                    <p>Comidas ricas y fáciles.</p>
                 </div>
+                <div class="benefit-card">
+                    <i class="fas fa-users fa-2x"></i>
+                    <h4>Comunidad</h4>
+                    <p>Grupo de apoyo exclusivo.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-mobile-alt fa-2x"></i>
+                    <h4>Soporte 24/7</h4>
+                    <p>Dudas vía WhatsApp.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 50px; background: #f4f7f6; padding: 40px; border-radius: 20px;">
+                <h3>¡Inscríbete Hoy!</h3>
+                <p>Próxima fecha de inicio: <strong>Lunes 19 de enero</strong></p>
+                <a href="https://wa.me/528441606727?text=Hola! Quiero inscribirme al Reto de 30 días" class="btn" style="background: #25d366; font-size: 1.2rem; padding: 15px 40px;">
+                    <i class="fab fa-whatsapp"></i> Apartar mi lugar
+                </a>
             </div>
         </div>
     </section>
 
-    <script src="js/script.js"></script>
-</body>
-</html>
-    </script>
+    <footer style="background: var(--dark); color: white; padding: 40px 0; text-align: center;">
+        <p>&copy; 2026 Clínica de Nutrición Patricia Barajas</p>
+    </footer>
 </body>
 </html>
