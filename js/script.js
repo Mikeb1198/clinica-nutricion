@@ -108,7 +108,7 @@ function enviarWhatsApp(event) {
     const mensaje = `Hola Paty! Soy *${nombre}*. Me interesa el servicio de *${servicio}*. 
 Preferiría la clínica de *${clinica}* en el horario de *${horario}*.`;
 
-    const url = `https://wa.me/528441606727?text=${encodeURIComponent(mensaje)}`;
+    const url = `https://wa.me/528446224872?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
 }
 
